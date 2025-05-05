@@ -6,6 +6,6 @@
     unset($_SESSION["user"]);
 
     // Redirect
-    header("Location: index.php");
+    header("Location: /");
     exit;
 ?>

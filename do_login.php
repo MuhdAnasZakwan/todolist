@@ -38,7 +38,7 @@
                 $_SESSION["user"] = $user; // Store data in session
 
                 // Redirect
-                header("Location: index.php");
+                header("Location: /");
                 exit;
             } else {
                 echo "Wrong password";

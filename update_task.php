@@ -28,6 +28,6 @@
     ]);
 
     // Redirect user back to index
-    header("Location: index.php");
+    header("Location: /");
     exit;
 ?>

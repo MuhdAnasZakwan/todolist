@@ -46,7 +46,7 @@
                 "password" => password_hash($password, PASSWORD_DEFAULT)
             ]);
             // Redirect
-            header("Location: login.php");
+            header("Location: /login");
             exit;
         }
     }
