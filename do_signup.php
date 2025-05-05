@@ -20,20 +20,34 @@
     } else if ($password !== $confirm_password) {
         echo "Unmatched password";
     } else {
-        // Create account
+        // Check Exist
         // SQL Command
-        $sql = "INSERT INTO users (`name`, `email`, `password`) VALUES (:name, :email, :password)";
+        $sql = "SELECT * FROM users WHERE email = :email";
         // Prepare SQL Query
         $query = $database->prepare($sql);
         // Execute SQL Query
         $query->execute([
-            "name" => $name,
-            "email" => $email,
-            "password" => password_hash($password, PASSWORD_DEFAULT)
+            "email" => $email
         ]);
+        // Fetch (only to get data first row only)
+        $user = $query->fetch();
+        if ($user) {
+            echo "Already sign in lah";
+        } else {
+            // Create account
+            // SQL Command
+            $sql = "INSERT INTO users (`name`, `email`, `password`) VALUES (:name, :email, :password)";
+            // Prepare SQL Query
+            $query = $database->prepare($sql);
+            // Execute SQL Query
+            $query->execute([
+                "name" => $name,
+                "email" => $email,
+                "password" => password_hash($password, PASSWORD_DEFAULT)
+            ]);
+            // Redirect
+            header("Location: login.php");
+            exit;
+        }
     }
-
-    // Redirect
-    header("Location: login.php");
-    exit;
 ?>
