@@ -28,7 +28,7 @@
         $query->execute([
             "email" => $email
         ]);
-        // Fetch (only to get data)
+        // Fetch (only to get data first row only)
         $user = $query->fetch();
 
         // If Fetch Empty
