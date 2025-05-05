@@ -17,10 +17,10 @@
 
     Action Route
     - localhost:1111/auth/login -> includes/auth/do_login.php
-    -
-    -
-    -
-    -
+    - localhost:1111/auth/signup -> includes/auth/do_signup.php
+    - localhost:1111/task/add -> includes/task/add_task.php
+    - localhost:1111/task/delete -> includes/task/delete_task.php
+    - localhost:1111/task/update -> includes/task/update_task.php
     */
 
     switch ($path) {
