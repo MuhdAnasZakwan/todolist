@@ -1,14 +1,6 @@
 <?php
     // Connect to Database
-    // 1. database info
-    $host = "127.0.0.1";
-    $database_name = "todolist";
-    $database_user = "root";
-    $database_password = "";
-
-    // 2. Connect PHP with MYSQL database
-    // PDO (PHP Database Object)
-    $database = new PDO("mysql:host=$host;dbname=$database_name", $database_user, $database_password);
+    $database = connectToDB();
 
     // data from input
     $task_id = $_POST["task_id"];
